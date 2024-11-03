@@ -1,0 +1,47 @@
+﻿<Window x:Class="lab_2.CreateFileForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab_2"
+        mc:Ignorable="d"
+        Title="CreateDialog" Height="400" Width="300">
+    <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Content="Name" Margin="0,0,10,0"/>
+
+            <TextBox Grid.Column="1" Name="_textbox_name"/>
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <RadioButton GroupName="Type" IsChecked="True" Name="_radio_file" Content="File" Grid.Column="0"/>
+            <RadioButton GroupName="Type" Name="_radio_directory" Content="Directory" Grid.Column="1"/>
+        </Grid>
+
+        <CheckBox Content="ReadOnly" Name="_checkbox_readonly"/>
+        <CheckBox Content="Archive" Name="_checkbox_archive"/>
+        <CheckBox Content="Hidden" Name="_checkbox_hidden"/>
+        <CheckBox Content="System" Name="_checkbox_system"/>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Ok" Click="CreateNewItem"/>
+            <Button Grid.Column="1" Content="Cancel" Click="Cancel"/>
+        </Grid>
+
+    </StackPanel>
+</Window>
